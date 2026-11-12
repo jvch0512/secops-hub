@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SecOps Hub</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">&#9670;</span> SecOps Hub <small>simulated SOC</small></div>
+  <div class="live"><span class="dot" id="dot"></span><span id="livetxt">connecting</span></div>
+</header>
+
+<section class="kpis">
+  <div class="kpi"><div class="label">Alerts</div><div class="value" id="k-total">0</div></div>
+  <div class="kpi crit"><div class="label">Critical incidents</div><div class="value" id="k-crit">0</div></div>
+  <div class="kpi"><div class="label">High and critical alerts</div><div class="value" id="k-high">0</div></div>
+  <div class="kpi"><div class="label">Top technique</div><div class="value small" id="k-top">-</div></div>
+</section>
+
+<main>
+  <section class="panel feed">
+    <h2>Live alert feed</h2>
+    <div class="rows" id="feed"></div>
+  </section>
+
+  <section class="panel">
+    <h2>MITRE ATT&amp;CK tactics</h2>
+    <div id="tactics"></div>
+    <h2 class="sub">Top techniques</h2>
+    <div id="techniques"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Correlated incidents</h2>
+    <div id="incidents"></div>
+  </section>
+</main>
+
+<aside id="drawer" class="drawer hidden" aria-live="polite">
+  <button id="close" class="close" aria-label="Close">&times;</button>
+  <h3 id="d-title"></h3>
+  <dl id="d-meta"></dl>
+  <button id="ask" class="ask">Ask the AI analyst</button>
+  <div id="d-ai" class="ai"></div>
+</aside>
+<script src="app.js"></script>
+</body>
+</html>
